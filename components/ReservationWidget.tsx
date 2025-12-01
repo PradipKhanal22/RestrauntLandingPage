@@ -1,0 +1,213 @@
+import React, { useState } from 'react';
+import { Button } from './Button';
+import { Calendar, Users, Clock, ChefHat, Coffee, Wine, Crown } from 'lucide-react';
+
+const experiences = [
+  { name: 'Dining Room', icon: Coffee, description: 'Classic fine dining experience' },
+  { name: 'Patio', icon: Wine, description: 'Al fresco dining under the stars' },
+  { name: "Chef's Counter", icon: ChefHat, description: 'Front-row culinary theater' },
+  { name: 'Private Room', icon: Crown, description: 'Exclusive intimate setting' }
+];
+
+export const ReservationWidget: React.FC = () => {
+  const [activeTab, setActiveTab] = useState('Dining Room');
+  const [date, setDate] = useState('2025-12-01');
+  const [guests, setGuests] = useState('2');
+  const [time, setTime] = useState('7:00 PM');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      // Handle reservation logic here
+    }, 2000);
+  };
+
+  const activeExperience = experiences.find(exp => exp.name === activeTab);
+
+  return (
+    <section id="reservations" className="py-32 bg-gradient-to-b from-stone-100 to-white relative scroll-mt-28 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Enhanced Floating Card */}
+        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12 max-w-6xl mx-auto -mt-16 md:-mt-32 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-[0.02]">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_1px_1px,#0f2f24_1px,transparent_0)] bg-[length:32px_32px]"></div>
+          </div>
+          
+          <div className="relative z-10">
+            {/* Enhanced Header */}
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center mb-6">
+                <div className="h-px w-12 bg-accent mr-4"></div>
+                <span className="text-accent text-sm uppercase tracking-widest font-medium">
+                  Reservations
+                </span>
+                <div className="h-px w-12 bg-accent ml-4"></div>
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-primary mb-4 italic">
+                Book Your Table
+              </h2>
+              <p className="text-stone-600 text-lg max-w-2xl mx-auto">
+                Secure your spot for an unforgettable culinary journey at Lumière
+              </p>
+            </div>
+
+            {/* Enhanced Experience Tabs */}
+            <div className="mb-10">
+              <div className="flex flex-wrap justify-center gap-4 mb-6">
+                {experiences.map((exp) => {
+                  const Icon = exp.icon;
+                  return (
+                    <button
+                      key={exp.name}
+                      onClick={() => setActiveTab(exp.name)}
+                      className={`group flex flex-col items-center p-4 rounded-2xl border-2 transition-all duration-300 min-w-[140px] ${
+                        activeTab === exp.name 
+                          ? 'border-accent bg-accent/5 text-accent shadow-lg transform scale-105' 
+                          : 'border-stone-200 text-stone-500 hover:border-accent/50 hover:text-accent hover:bg-accent/5'
+                      }`}
+                    >
+                      <Icon size={24} className="mb-2 group-hover:scale-110 transition-transform" />
+                      <span className="font-medium text-sm">{exp.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
+              
+              {/* Active Experience Description */}
+              {activeExperience && (
+                <div className="text-center">
+                  <p className="text-stone-600 italic">{activeExperience.description}</p>
+                </div>
+              )}
+            </div>
+
+            {/* Enhanced Form */}
+            <form onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-end mb-8">
+                {/* Date Input */}
+                <div className="space-y-3">
+                  <label className="text-xs uppercase font-bold text-stone-500 tracking-wider flex items-center gap-2">
+                    <Calendar size={14} className="text-accent" />
+                    Date
+                  </label>
+                  <div className="relative group">
+                    <input 
+                      type="date" 
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
+                      min={new Date().toISOString().split('T')[0]}
+                      className="w-full bg-gradient-to-r from-stone-50 to-white border-2 border-stone-200 rounded-xl py-4 px-4 text-stone-700 focus:outline-none focus:border-accent focus:bg-white transition-all duration-300 group-hover:border-stone-300"
+                    />
+                  </div>
+                </div>
+
+                {/* Guests Select */}
+                <div className="space-y-3">
+                  <label className="text-xs uppercase font-bold text-stone-500 tracking-wider flex items-center gap-2">
+                    <Users size={14} className="text-accent" />
+                    Party Size
+                  </label>
+                  <div className="relative group">
+                    <select 
+                      value={guests}
+                      onChange={(e) => setGuests(e.target.value)}
+                      className="w-full bg-gradient-to-r from-stone-50 to-white border-2 border-stone-200 rounded-xl py-4 px-4 text-stone-700 focus:outline-none focus:border-accent focus:bg-white transition-all duration-300 appearance-none cursor-pointer group-hover:border-stone-300"
+                    >
+                      {[1,2,3,4,5,6,7,8].map(n => (
+                        <option key={n} value={n}>{n} Guest{n !== 1 ? 's' : ''}</option>
+                      ))}
+                      <option value="9+">9+ Guests (Group)</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                      <svg className="w-4 h-4 fill-current text-stone-400" viewBox="0 0 20 20">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Time Select */}
+                <div className="space-y-3">
+                  <label className="text-xs uppercase font-bold text-stone-500 tracking-wider flex items-center gap-2">
+                    <Clock size={14} className="text-accent" />
+                    Time
+                  </label>
+                  <div className="relative group">
+                    <select 
+                      value={time}
+                      onChange={(e) => setTime(e.target.value)}
+                      className="w-full bg-gradient-to-r from-stone-50 to-white border-2 border-stone-200 rounded-xl py-4 px-4 text-stone-700 focus:outline-none focus:border-accent focus:bg-white transition-all duration-300 appearance-none cursor-pointer group-hover:border-stone-300"
+                    >
+                      <option>5:00 PM</option>
+                      <option>5:30 PM</option>
+                      <option>6:00 PM</option>
+                      <option>6:30 PM</option>
+                      <option>7:00 PM</option>
+                      <option>7:30 PM</option>
+                      <option>8:00 PM</option>
+                      <option>8:30 PM</option>
+                      <option>9:00 PM</option>
+                      <option>9:30 PM</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                      <svg className="w-4 h-4 fill-current text-stone-400" viewBox="0 0 20 20">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <Button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full h-[56px] relative overflow-hidden group"
+                  size="lg"
+                >
+                  <span className={`transition-opacity duration-300 ${
+                    isSubmitting ? 'opacity-0' : 'opacity-100'
+                  }`}>
+                    Find Available Tables
+                  </span>
+                  {isSubmitting && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                  )}
+                </Button>
+              </div>
+            </form>
+            
+            {/* Enhanced Footer */}
+            <div className="border-t border-stone-200 pt-6">
+              <div className="text-center space-y-3">
+                <div className="flex items-center justify-center gap-4 text-sm text-stone-500">
+                  <span className="flex items-center gap-1">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    Powered by OpenTable
+                  </span>
+                  <span>•</span>
+                  <span>Instant confirmation</span>
+                </div>
+                <p className="text-xs text-stone-400">
+                  Reservations for parties of 6+ require a credit card hold. 
+                  <br className="hidden sm:inline" />
+                  Cancellation policy applies for same-day changes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
