@@ -21,9 +21,9 @@ export const Hero: React.FC = () => {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Image with Enhanced Overlay */}
       <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-          alt="Atmosphere" 
+        <img
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          alt="Atmosphere"
           className="w-full h-full object-cover scale-110 animate-slow-zoom"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-stone-900/60 to-stone-900/90"></div>
@@ -70,19 +70,33 @@ export const Hero: React.FC = () => {
 
           {/* Enhanced Button Group */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
-            <Button 
-              variant="primary" 
-              size="lg" 
-              className="min-w-[220px] group relative overflow-hidden" 
+            <Button
               onClick={() => scrollToSection('reservations')}
+              className="relative min-w-[220px] px-8 py-4 
+             text-white font-medium text-lg tracking-wide
+             bg-black rounded-full
+             border border-amber-800/40
+             overflow-hidden
+             transition-all duration-400 ease-out
+             hover:bg-amber-600 hover:border-amber-600 hover:shadow-xl hover:shadow-amber-500/25
+             group"
             >
-              <span className="relative z-10">Reserve a Table</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                Reserve a Table
+                <span className="translate-x-0 group-hover:translate-x-1 transition-transform duration-300">
+                  →
+                </span>
+              </span>
+
+              {/* Subtle shine effect on hover */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full 
+                  bg-gradient-to-r from-transparent via-white/10 to-transparent 
+                  transition-transform duration-700 skew-x-12" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="min-w-[220px] group backdrop-blur-sm" 
+            <Button
+              variant="outline"
+              size="lg"
+              className="min-w-[220px] group backdrop-blur-sm"
               onClick={() => scrollToSection('menu')}
             >
               <span>View Menus</span>
