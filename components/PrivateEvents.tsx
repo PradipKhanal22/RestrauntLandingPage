@@ -5,21 +5,21 @@ import { Users, Calendar, Heart, Sparkles, Award } from 'lucide-react';
 const eventSpaces = [
   {
     icon: Users,
-    title: "Chef's Table",
-    capacity: "6-8 guests",
-    description: "Front-row seats to culinary artistry"
+    title: "Birthday Parties",
+    capacity: "10-30 guests",
+    description: "Custom cakes and catering for your special day"
   },
   {
     icon: Heart,
-    title: "Wine Cellar",
-    capacity: "12-16 guests",
-    description: "Intimate dining among our finest vintages"
+    title: "Small Gatherings",
+    capacity: "5-15 guests",
+    description: "Perfect for meetings or casual get-togethers"
   },
   {
     icon: Award,
-    title: "Full Buyout",
-    capacity: "Up to 100 guests",
-    description: "The entire restaurant for your exclusive event"
+    title: "Corporate Events",
+    capacity: "Up to 50 guests",
+    description: "Coffee catering and meeting spaces available"
   }
 ];
 
@@ -29,12 +29,12 @@ export const PrivateEvents: React.FC = () => {
       {/* Enhanced Background */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" 
-          alt="Private Dining" 
+          src="https://images.unsplash.com/photo-1464349095431-e9a21285b2bc?q=80&w=1287&auto=format&fit=crop" 
+          alt="Cafe Party" 
           className="w-full h-full object-cover scale-110 animate-slow-zoom"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-stone-900/60 to-black/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-coffee-900/70 to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
       </div>
 
       {/* Floating Elements */}
@@ -48,21 +48,21 @@ export const PrivateEvents: React.FC = () => {
         {/* Enhanced Header */}
         <div className="mb-16">
           <div className="flex items-center justify-center mb-8">
-            <div className="h-px w-16 bg-accent mr-4"></div>
-            <span className="text-accent text-sm uppercase tracking-widest font-medium flex items-center gap-2">
-              <Sparkles size={16} className="text-accent" />
-              Private Events
+            <div className="h-px w-16 bg-secondary mr-4"></div>
+            <span className="text-secondary text-sm uppercase tracking-widest font-bold flex items-center gap-2">
+              <Sparkles size={18} className="text-secondary" />
+              Events & Catering
             </span>
-            <div className="h-px w-16 bg-accent ml-4"></div>
+            <div className="h-px w-16 bg-secondary ml-4"></div>
           </div>
           
-          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl mb-8 italic bg-gradient-to-br from-white via-secondary to-white bg-clip-text text-transparent leading-tight">
-            Host an Unforgettable Evening
+          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl mb-8 font-bold bg-gradient-to-br from-secondary via-accent to-cream bg-clip-text text-transparent leading-tight">
+            Celebrate With Suvan's Cafe
           </h2>
           
-          <p className="max-w-3xl mx-auto text-lg md:text-xl text-stone-200 mb-12 font-light leading-relaxed">
-            From intimate celebrations in our Wine Cellar to full buyouts for up to 100 guests, 
-            Lumière offers a bespoke backdrop for your most cherished moments.
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-cream mb-12 font-medium leading-relaxed">
+            From birthday parties to corporate events, we make every gathering special with our delicious coffee, 
+            custom cakes, and catering services for groups of all sizes.
           </p>
         </div>
 
@@ -73,21 +73,21 @@ export const PrivateEvents: React.FC = () => {
             return (
               <div 
                 key={index}
-                className="group bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/20 hover:border-accent/50 transition-all duration-300 transform hover:scale-105"
+                className="group bg-secondary/20 backdrop-blur-md border-2 border-secondary/40 rounded-2xl p-8 hover:bg-secondary/30 hover:border-secondary transition-all duration-300 transform hover:scale-105"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="mb-4">
-                  <div className="inline-flex p-3 bg-accent/20 backdrop-blur-sm rounded-full border border-accent/30 group-hover:bg-accent/30 transition-all duration-300">
-                    <Icon size={24} className="text-accent" />
+                  <div className="inline-flex p-4 bg-secondary/30 backdrop-blur-sm rounded-full border-2 border-secondary/50 group-hover:bg-secondary/40 transition-all duration-300">
+                    <Icon size={28} className="text-secondary" />
                   </div>
                 </div>
-                <h3 className="font-serif text-xl mb-2 italic">
+                <h3 className="font-serif text-2xl mb-2 font-bold text-secondary">
                   {space.title}
                 </h3>
-                <p className="text-accent font-medium mb-3 text-sm uppercase tracking-wider">
+                <p className="text-accent font-bold mb-3 text-sm uppercase tracking-wider">
                   {space.capacity}
                 </p>
-                <p className="text-stone-300 text-sm leading-relaxed">
+                <p className="text-cream text-base leading-relaxed font-medium">
                   {space.description}
                 </p>
               </div>
@@ -98,7 +98,7 @@ export const PrivateEvents: React.FC = () => {
         {/* Enhanced CTA Section */}
         <div className="max-w-2xl mx-auto">
           <div className="mb-8">
-            <p className="text-stone-300 italic mb-4">
+            <p className="text-cream font-bold italic mb-4">
               "Every celebration deserves the perfect setting"
             </p>
             <div className="flex justify-center items-center gap-2 mb-6">
@@ -122,13 +122,13 @@ export const PrivateEvents: React.FC = () => {
             <Button 
               variant="ghost" 
               size="lg"
-              className="min-w-[220px] text-stone-300 hover:text-white"
+              className="min-w-[220px] text-cream font-semibold hover:text-secondary"
             >
               View Event Gallery
             </Button>
           </div>
           
-          <p className="text-stone-400 text-sm mt-6">
+          <p className="text-cream/80 font-medium text-sm mt-6">
             Contact our events team at events@lumiere.com or call (555) 123-4567
           </p>
         </div>

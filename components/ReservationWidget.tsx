@@ -3,14 +3,14 @@ import { Button } from './Button';
 import { Calendar, Users, Clock, ChefHat, Coffee, Wine, Crown } from 'lucide-react';
 
 const experiences = [
-  { name: 'Dining Room', icon: Coffee, description: 'Classic fine dining experience' },
-  { name: 'Patio', icon: Wine, description: 'Al fresco dining under the stars' },
-  { name: "Chef's Counter", icon: ChefHat, description: 'Front-row culinary theater' },
-  { name: 'Private Room', icon: Crown, description: 'Exclusive intimate setting' }
+  { name: 'Dine In', icon: Coffee, description: 'Enjoy in our cozy cafe' },
+  { name: 'Takeout', icon: ChefHat, description: 'Quick grab & go service' },
+  { name: 'Custom Cake', icon: Crown, description: 'Order a personalized cake' },
+  { name: 'Catering', icon: Users, description: 'Events & large orders' }
 ];
 
 export const ReservationWidget: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('Dining Room');
+  const [activeTab, setActiveTab] = useState('Dine In');
   const [date, setDate] = useState('2025-12-01');
   const [guests, setGuests] = useState('2');
   const [time, setTime] = useState('7:00 PM');
@@ -29,10 +29,10 @@ export const ReservationWidget: React.FC = () => {
   const activeExperience = experiences.find(exp => exp.name === activeTab);
 
   return (
-    <section id="reservations" className="py-32 bg-gradient-to-b from-stone-100 to-white relative scroll-mt-28 overflow-hidden">
+    <section id="reservations" className="py-32 bg-gradient-to-b from-cream to-white relative scroll-mt-28 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Enhanced Floating Card */}
@@ -55,8 +55,8 @@ export const ReservationWidget: React.FC = () => {
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-primary mb-4 italic">
                 Book Your Table
               </h2>
-              <p className="text-stone-600 text-lg max-w-2xl mx-auto">
-                Secure your spot for an unforgettable culinary journey at Lumière
+              <p className="text-primary font-semibold text-lg max-w-2xl mx-auto">
+                Come enjoy great coffee, fresh food, and friendly service at Suvan's Cafe
               </p>
             </div>
 
@@ -72,7 +72,7 @@ export const ReservationWidget: React.FC = () => {
                       className={`group flex flex-col items-center p-4 rounded-2xl border-2 transition-all duration-300 min-w-[140px] ${
                         activeTab === exp.name 
                           ? 'border-accent bg-accent/5 text-accent shadow-lg transform scale-105' 
-                          : 'border-stone-200 text-stone-500 hover:border-accent/50 hover:text-accent hover:bg-accent/5'
+                          : 'border-secondary/30 text-coffee-700 hover:border-accent/70 hover:text-accent hover:bg-accent/10'
                       }`}
                     >
                       <Icon size={24} className="mb-2 group-hover:scale-110 transition-transform" />
@@ -85,7 +85,7 @@ export const ReservationWidget: React.FC = () => {
               {/* Active Experience Description */}
               {activeExperience && (
                 <div className="text-center">
-                  <p className="text-stone-600 italic">{activeExperience.description}</p>
+                  <p className="text-coffee-700 font-semibold">{activeExperience.description}</p>
                 </div>
               )}
             </div>
@@ -95,8 +95,8 @@ export const ReservationWidget: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-end mb-8">
                 {/* Date Input */}
                 <div className="space-y-3">
-                  <label className="text-xs uppercase font-bold text-stone-500 tracking-wider flex items-center gap-2">
-                    <Calendar size={14} className="text-accent" />
+                  <label className="text-xs uppercase font-bold text-primary tracking-wider flex items-center gap-2">
+                    <Calendar size={16} className="text-accent" />
                     Date
                   </label>
                   <div className="relative group">
@@ -105,30 +105,30 @@ export const ReservationWidget: React.FC = () => {
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
                       min={new Date().toISOString().split('T')[0]}
-                      className="w-full bg-gradient-to-r from-stone-50 to-white border-2 border-stone-200 rounded-xl py-4 px-4 text-stone-700 focus:outline-none focus:border-accent focus:bg-white transition-all duration-300 group-hover:border-stone-300"
+                      className="w-full bg-gradient-to-r from-cream to-white border-2 border-secondary/30 rounded-xl py-4 px-4 text-primary font-semibold focus:outline-none focus:border-secondary focus:bg-white transition-all duration-300"
                     />
                   </div>
                 </div>
 
                 {/* Guests Select */}
                 <div className="space-y-3">
-                  <label className="text-xs uppercase font-bold text-stone-500 tracking-wider flex items-center gap-2">
-                    <Users size={14} className="text-accent" />
-                    Party Size
+                  <label className="text-xs uppercase font-bold text-primary tracking-wider flex items-center gap-2">
+                    <Users size={16} className="text-accent" />
+                    Number of People
                   </label>
                   <div className="relative group">
                     <select 
                       value={guests}
                       onChange={(e) => setGuests(e.target.value)}
-                      className="w-full bg-gradient-to-r from-stone-50 to-white border-2 border-stone-200 rounded-xl py-4 px-4 text-stone-700 focus:outline-none focus:border-accent focus:bg-white transition-all duration-300 appearance-none cursor-pointer group-hover:border-stone-300"
+                      className="w-full bg-gradient-to-r from-cream to-white border-2 border-secondary/30 rounded-xl py-4 px-4 text-primary font-semibold focus:outline-none focus:border-secondary focus:bg-white transition-all duration-300 appearance-none cursor-pointer"
                     >
                       {[1,2,3,4,5,6,7,8].map(n => (
-                        <option key={n} value={n}>{n} Guest{n !== 1 ? 's' : ''}</option>
+                        <option key={n} value={n}>{n}</option>
                       ))}
-                      <option value="9+">9+ Guests (Group)</option>
+                      <option value="9+">10+</option>
                     </select>
                     <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                      <svg className="w-4 h-4 fill-current text-stone-400" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 fill-current text-accent" viewBox="0 0 20 20">
                         <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                       </svg>
                     </div>
@@ -137,31 +137,35 @@ export const ReservationWidget: React.FC = () => {
 
                 {/* Time Select */}
                 <div className="space-y-3">
-                  <label className="text-xs uppercase font-bold text-stone-500 tracking-wider flex items-center gap-2">
-                    <Clock size={14} className="text-accent" />
-                    Time
+                  <label className="text-xs uppercase font-bold text-primary tracking-wider flex items-center gap-2">
+                    <Clock size={16} className="text-accent" />
+                    Pickup/Visit Time
                   </label>
                   <div className="relative group">
                     <select 
                       value={time}
                       onChange={(e) => setTime(e.target.value)}
-                      className="w-full bg-gradient-to-r from-stone-50 to-white border-2 border-stone-200 rounded-xl py-4 px-4 text-stone-700 focus:outline-none focus:border-accent focus:bg-white transition-all duration-300 appearance-none cursor-pointer group-hover:border-stone-300"
+                      className="w-full bg-gradient-to-r from-cream to-white border-2 border-secondary/30 rounded-xl py-4 px-4 text-primary font-semibold focus:outline-none focus:border-secondary focus:bg-white transition-all duration-300 appearance-none cursor-pointer"
                     >
+                      <option>7:00 AM</option>
+                      <option>8:00 AM</option>
+                      <option>9:00 AM</option>
+                      <option>10:00 AM</option>
+                      <option>11:00 AM</option>
+                      <option>12:00 PM</option>
+                      <option>1:00 PM</option>
+                      <option>2:00 PM</option>
+                      <option>3:00 PM</option>
+                      <option>4:00 PM</option>
                       <option>5:00 PM</option>
-                      <option>5:30 PM</option>
                       <option>6:00 PM</option>
-                      <option>6:30 PM</option>
                       <option>7:00 PM</option>
-                      <option>7:30 PM</option>
                       <option>8:00 PM</option>
-                      <option>8:30 PM</option>
-                      <option>9:00 PM</option>
-                      <option>9:30 PM</option>
                     </select>
                     <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                      <svg className="w-4 h-4 fill-current text-stone-400" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 fill-current text-accent" viewBox="0 0 20 20">
                         <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                      </svg>
+                        </svg>
                     </div>
                   </div>
                 </div>
@@ -170,13 +174,13 @@ export const ReservationWidget: React.FC = () => {
                 <Button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-[56px] relative overflow-hidden group"
+                  className="w-full h-[56px] bg-gradient-to-r from-secondary to-accent text-primary font-black text-lg hover:scale-105 transition-all duration-300 relative overflow-hidden"
                   size="lg"
                 >
                   <span className={`transition-opacity duration-300 ${
                     isSubmitting ? 'opacity-0' : 'opacity-100'
                   }`}>
-                    Find Available Tables
+                    Place Order
                   </span>
                   {isSubmitting && (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -188,20 +192,20 @@ export const ReservationWidget: React.FC = () => {
             </form>
             
             {/* Enhanced Footer */}
-            <div className="border-t border-stone-200 pt-6">
+            <div className="border-t border-secondary/20 pt-6">
               <div className="text-center space-y-3">
-                <div className="flex items-center justify-center gap-4 text-sm text-stone-500">
+                <div className="flex items-center justify-center gap-4 text-sm text-coffee-700 font-semibold">
                   <span className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    Powered by OpenTable
+                    Fresh Daily
                   </span>
                   <span>•</span>
-                  <span>Instant confirmation</span>
+                  <span>Quick Confirmation</span>
                 </div>
-                <p className="text-xs text-stone-400">
-                  Reservations for parties of 6+ require a credit card hold. 
+                <p className="text-sm text-coffee-600 font-medium">
+                  Custom cake orders require 48-hour advance notice. 
                   <br className="hidden sm:inline" />
-                  Cancellation policy applies for same-day changes.
+                  Catering for 20+ people available with advance booking.
                 </p>
               </div>
             </div>

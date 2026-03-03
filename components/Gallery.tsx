@@ -13,51 +13,51 @@ interface GalleryImage {
 const images: GalleryImage[] = [
   {
     id: '1',
-    src: "https://imgs.search.brave.com/B8jJoqiywgDk45QlxGslMVE20trav4BBxQOOdNtbcWI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oaXBz/LmhlYXJzdGFwcHMu/Y29tL2htZy1wcm9k/L2ltYWdlcy93aGl0/ZS1yYWJiaXQtbW9z/Y293LTE2MzgzOTUy/MTgucG5nP2Nyb3A9/MXh3OjF4aDtjZW50/ZXIsdG9w",
-    title: "Elegant Interior",
+    src: "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1287&auto=format&fit=crop",
+    title: "Cozy Cafe Interior",
     category: "Atmosphere",
-    description: "Our carefully curated dining space",
+    description: "Warm and inviting space",
     icon: Heart,
   },
   {
     id: '2',
-    src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    title: "Seasonal Artistry",
-    category: "Food",
-    description: "Farm-to-table excellence",
-    icon: ChefHat,
+    src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop",
+    title: "Fresh Coffee",
+    category: "Beverages",
+    description: "Premium artisan coffee",
+    icon: Coffee,
   },
   {
     id: '3',
-    src: "https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    title: "Craft Cocktails",
-    category: "Beverages",
-    description: "Handcrafted libations",
-    icon: Wine,
+    src: "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?q=80&w=1287&auto=format&fit=crop",
+    title: "Custom Cakes",
+    category: "Cakes",
+    description: "Beautiful custom creations",
+    icon: ChefHat,
   },
   {
     id: '4',
-    src: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80",
-    title: "Culinary Masters",
-    category: "Team",
-    description: "Our passionate culinary team",
-    icon: Users,
-  },
-  {
-    id: '5',
-    src: "https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
-    title: "Artful Plating",
+    src: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1287&auto=format&fit=crop",
+    title: "Fresh Pastries",
     category: "Food",
-    description: "Every dish is a masterpiece",
+    description: "Baked fresh daily",
     icon: Camera,
   },
   {
-    id: '6',
-    src: "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    title: "Intimate Moments",
-    category: "Experience",
-    description: "Creating unforgettable memories",
+    id: '5',
+    src: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1287&auto=format&fit=crop",
+    title: "Coffee Art",
+    category: "Beverages",
+    description: "Latte art perfection",
     icon: Coffee,
+  },
+  {
+    id: '6',
+    src: "https://images.unsplash.com/photo-1481833761820-0509d3217039?q=80&w=1287&auto=format&fit=crop",
+    title: "Happy Customers",
+    category: "Experience",
+    description: "Creating memorable moments",
+    icon: Users,
   },
 ];
 
@@ -71,27 +71,27 @@ export const Gallery: React.FC = () => {
     : images.filter(img => img.category === selectedCategory);
 
   return (
-    <section id="gallery" className="py-32 bg-gradient-to-b from-white via-stone-50 to-white scroll-mt-28 relative overflow-hidden">
+    <section id="gallery" className="py-32 bg-gradient-to-b from-cream via-coffee-50 to-cream scroll-mt-28 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-1/4 left-0 w-64 h-64 bg-accent/3 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Enhanced Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
-            <div className="h-px w-12 bg-accent mr-4"></div>
-            <span className="text-accent text-sm uppercase tracking-widest font-medium flex items-center gap-2">
-              <Camera size={16} className="text-accent" />
+            <div className="h-px w-12 bg-secondary mr-4"></div>
+            <span className="text-accent text-sm uppercase tracking-widest font-bold flex items-center gap-2">
+              <Camera size={18} className="text-secondary" />
               Gallery
             </span>
-            <div className="h-px w-12 bg-accent ml-4"></div>
+            <div className="h-px w-12 bg-secondary ml-4"></div>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary mb-6 italic">
-            A Feast for the Senses
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary mb-6 font-bold">
+            Our Cafe Story in Pictures
           </h2>
-          <p className="text-stone-600 text-lg max-w-2xl mx-auto leading-relaxed">
-            Step inside Lumière and discover the artistry that defines every moment of your dining experience
+          <p className="text-coffee-700 text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+            Discover the warmth and joy that fills Suvan's Cafe every single day
           </p>
         </div>
 
@@ -101,10 +101,10 @@ export const Gallery: React.FC = () => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'bg-accent text-white shadow-lg transform scale-105'
-                  : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200 hover:border-accent/50'
+                  ? 'bg-gradient-to-r from-secondary to-accent text-primary shadow-xl transform scale-105'
+                  : 'bg-white text-primary hover:bg-cream border-2 border-secondary/30 hover:border-secondary'
               }`}
             >
               {category}
@@ -158,7 +158,7 @@ export const Gallery: React.FC = () => {
                       <h3 className="font-serif text-xl mb-1 italic">
                         {image.title}
                       </h3>
-                      <p className="text-stone-200 text-sm leading-relaxed">
+                      <p className="text-cream font-semibold text-sm leading-relaxed">
                         {image.description}
                       </p>
                     </div>
@@ -182,9 +182,9 @@ export const Gallery: React.FC = () => {
         <div className="text-center mt-16">
           <div className="max-w-md mx-auto">
             <h3 className="font-serif text-2xl text-primary mb-4 italic">
-              Share Your Lumière Moments
+              Share Your Suvan's Cafe Moments
             </h3>
-            <p className="text-stone-600 mb-6">
+            <p className="text-primary font-semibold mb-6">
               Follow us @lumiererestaurant and share your experience with #LumiereMoments
             </p>
             <div className="flex justify-center items-center gap-2 text-accent">

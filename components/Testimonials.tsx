@@ -5,39 +5,39 @@ import { ChevronLeft, ChevronRight, Star, Quote, Award } from 'lucide-react';
 const testimonials: Testimonial[] = [
   {
     id: '1',
-    quote: "A masterclass in modern dining. Lumière balances innovation with comfort in a way that feels effortless.",
-    author: "Julian Reed",
-    source: "The New York Times",
+    quote: "Best coffee in town! The custom cake for my daughter's birthday was absolutely perfect. Thank you Suvan's!",
+    author: "Emily Rodriguez",
+    source: "Google Reviews",
     rating: 5,
-    title: "Food Critic",
-    avatar: "https://imgs.search.brave.com/Cd-FV7eKDEGkvcpdRhkw4xk-0cLyJLY76hrpoD7f8l0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnVybWFuLmVkdS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxOS8w/My8yMDIxMTAyOV9I/U0NfRmFjdWx0eS0x/MC04MDB4ODAwLTEu/anBn"
+    title: "Regular Customer",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
   },
   {
     id: '2',
-    quote: "The tasting menu is a journey through the seasons. Easily the best new opening of 2025.",
-    author: "Sarah Mitchell",
-    source: "Eater NY",
+    quote: "The atmosphere is so cozy and welcoming. Great place to work or catch up with friends over amazing lattes!",
+    author: "Michael Chen",
+    source: "Yelp",
     rating: 5,
-    title: "Senior Editor",
-    avatar: "https://imgs.search.brave.com/Cd-FV7eKDEGkvcpdRhkw4xk-0cLyJLY76hrpoD7f8l0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnVybWFuLmVkdS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxOS8w/My8yMDIxMTAyOV9I/U0NfRmFjdWx0eS0x/MC04MDB4ODAwLTEu/anBn"
+    title: "Coffee Lover",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
   },
   {
     id: '3',
-    quote: "Impeccable service, stunning interiors, and food that speaks to the soul. A true destination.",
-    author: "Michelin Guide",
-    source: "Inspector Notes",
+    quote: "Their fresh pastries are to die for! And the custom cake service is phenomenal. Highly recommend!",
+    author: "Sarah Johnson",
+    source: "Facebook",
     rating: 5,
-    title: "Michelin Inspector",
-    avatar: "https://imgs.search.brave.com/Cd-FV7eKDEGkvcpdRhkw4xk-0cLyJLY76hrpoD7f8l0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnVybWFuLmVkdS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxOS8w/My8yMDIxMTAyOV9I/U0NfRmFjdWx0eS0x/MC04MDB4ODAwLTEu/anBn"
+    title: "Happy Customer",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop"
   }
 ];
 
 const pressLogos = [
-  { name: "VOGUE", style: "font-bold" },
-  { name: "Eater", style: "font-light" },
-  { name: "The New York Times", style: "font-serif" },
-  { name: "Michelin Guide", style: "font-bold" },
-  { name: "Bon Appétit", style: "font-medium" }
+  { name: "Google ⭐⭐⭐⭐⭐", style: "font-bold" },
+  { name: "Yelp ⭐⭐⭐⭐⭐", style: "font-medium" },
+  { name: "Facebook Reviews", style: "font-semibold" },
+  { name: "Local Favorite", style: "font-bold" },
+  { name: "Best Cafe 2024", style: "font-bold" }
 ];
 
 export const Testimonials: React.FC = () => {
@@ -69,29 +69,29 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-32 bg-gradient-to-br from-stone-100 via-stone-50 to-white relative overflow-hidden">
+    <section className="py-32 bg-gradient-to-br from-cream via-coffee-50 to-cream relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_1px_1px,#b85c38_1px,transparent_0)] bg-[length:32px_32px]"></div>
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_1px_1px,#FF9F40_1px,transparent_0)] bg-[length:32px_32px]"></div>
       </div>
       
       {/* Floating Elements */}
-      <div className="absolute top-1/4 right-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-1/4 left-10 w-24 h-24 bg-primary/5 rounded-full blur-3xl animate-float-delayed"></div>
+      <div className="absolute top-1/4 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-1/4 left-10 w-24 h-24 bg-accent/10 rounded-full blur-3xl animate-float-delayed"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
-            <div className="h-px w-12 bg-accent mr-4"></div>
-            <span className="text-accent text-sm uppercase tracking-widest font-medium flex items-center gap-2">
-              <Quote size={16} className="text-accent" />
-              Testimonials
+            <div className="h-px w-12 bg-secondary mr-4"></div>
+            <span className="text-accent text-sm uppercase tracking-widest font-bold flex items-center gap-2">
+              <Quote size={18} className="text-secondary" />
+              Customer Reviews
             </span>
-            <div className="h-px w-12 bg-accent ml-4"></div>
+            <div className="h-px w-12 bg-secondary ml-4"></div>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary mb-6 italic">
-            What Critics Say
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary mb-6 font-bold">
+            What Our Customers Say
           </h2>
         </div>
         
@@ -146,7 +146,7 @@ export const Testimonials: React.FC = () => {
                   <p className="font-bold text-primary text-lg mb-1">
                     {testimonials[currentIndex].author}
                   </p>
-                  <p className="text-stone-500 text-sm mb-1">
+                  <p className="text-coffee-700 font-semibold text-sm mb-1">
                     {testimonials[currentIndex].title}
                   </p>
                   <div className="flex items-center justify-center md:justify-start gap-2">
@@ -179,7 +179,7 @@ export const Testimonials: React.FC = () => {
         {/* Enhanced Press Logos */}
         <div className="border-t border-stone-200 pt-16">
           <div className="text-center mb-8">
-            <p className="text-stone-600 font-medium uppercase tracking-widest text-sm">
+            <p className="text-primary font-bold uppercase tracking-widest text-sm">
               As Featured In
             </p>
           </div>

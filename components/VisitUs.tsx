@@ -5,56 +5,54 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Address',
-    primary: 'Lumière Dining',
-    details: ['142 Fifth Avenue', 'New York, NY 10011'],
+    primary: 'Suvan\'s Cafe',
+    details: ['123 Main Street', 'Your City, State 12345'],
     link: 'https://maps.google.com'
   },
   {
     icon: Phone,
-    title: 'Reservations',
-    primary: '+1 (212) 555-0199',
-    details: ['Available daily 9am-9pm'],
-    link: 'tel:+12125550199'
+    title: 'Call Us',
+    primary: '+1 (555) 555-1234',
+    details: ['Available daily 7am-10pm'],
+    link: 'tel:+15555551234'
   },
   {
     icon: Mail,
     title: 'Email',
-    primary: 'reservations@lumiere.com',
-    details: ['General inquiries welcome'],
-    link: 'mailto:reservations@lumiere.com'
+    primary: 'hello@suvanscafe.com',
+    details: ['We\'d love to hear from you'],
+    link: 'mailto:hello@suvanscafe.com'
   }
 ];
 
 const hours = [
-  { day: 'Monday', dinner: 'Closed', brunch: null },
-  { day: 'Tuesday - Thursday', dinner: '5:00 PM - 10:00 PM', brunch: null },
-  { day: 'Friday - Saturday', dinner: '5:00 PM - 11:00 PM', brunch: '10:00 AM - 2:00 PM' },
-  { day: 'Sunday', dinner: '5:00 PM - 9:00 PM', brunch: '10:00 AM - 2:00 PM' }
+  { day: 'Monday - Friday', dinner: '7:00 AM - 9:00 PM', brunch: null },
+  { day: 'Saturday - Sunday', dinner: '8:00 AM - 10:00 PM', brunch: null },
 ];
 
 export const VisitUs: React.FC = () => {
   return (
-    <section id="visit" className="py-32 bg-gradient-to-br from-stone-50 via-white to-stone-100 scroll-mt-28 relative overflow-hidden">
+    <section id="visit" className="py-32 bg-gradient-to-br from-cream via-coffee-50 to-cream scroll-mt-28 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-accent/3 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
-            <div className="h-px w-12 bg-accent mr-4"></div>
-            <span className="text-accent text-sm uppercase tracking-widest font-medium flex items-center gap-2">
-              <Navigation size={16} className="text-accent" />
-              Visit
+            <div className="h-px w-12 bg-secondary mr-4"></div>
+            <span className="text-accent text-sm uppercase tracking-widest font-bold flex items-center gap-2">
+              <Navigation size={18} className="text-secondary" />
+              Visit Us
             </span>
-            <div className="h-px w-12 bg-accent ml-4"></div>
+            <div className="h-px w-12 bg-secondary ml-4"></div>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary mb-6 italic">
-            Find Your Way to Lumière
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary mb-6 font-bold">
+            Come Visit Suvan's Cafe
           </h2>
-          <p className="text-stone-600 text-lg max-w-2xl mx-auto leading-relaxed">
-            Located in the heart of Manhattan, we welcome you to experience culinary excellence in an elegant setting
+          <p className="text-coffee-700 text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+            Located in your neighborhood, we're here to serve you with a smile and the best coffee in town
           </p>
         </div>
 
@@ -70,22 +68,22 @@ export const VisitUs: React.FC = () => {
                   <a 
                     key={index}
                     href={info.link}
-                    className="group block p-6 bg-white rounded-2xl border border-stone-200 hover:border-accent/30 hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]"
+                    className="group block p-6 bg-white rounded-2xl border-2 border-secondary/30 hover:border-secondary hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors duration-300">
-                          <Icon size={24} className="text-accent" />
+                        <div className="p-3 bg-secondary/20 rounded-xl group-hover:bg-secondary/30 transition-colors duration-300 border-2 border-secondary/30">
+                          <Icon size={28} className="text-accent" />
                         </div>
                       </div>
                       <div className="flex-grow">
-                        <p className="text-xs uppercase tracking-wider text-stone-500 font-bold mb-1">
+                        <p className="text-xs uppercase tracking-wider text-coffee-700 font-bold mb-1">
                           {info.title}
                         </p>
-                        <p className="font-serif text-lg text-primary mb-2 group-hover:text-accent transition-colors duration-300">
+                        <p className="font-serif text-xl text-primary mb-2 group-hover:text-accent transition-colors duration-300 font-bold">
                           {info.primary}
                         </p>
-                        <div className="text-sm text-stone-600 space-y-1">
+                        <div className="text-sm text-coffee-700 space-y-1 font-medium">
                           {info.details.map((detail, i) => (
                             <p key={i}>{detail}</p>
                           ))}
@@ -98,30 +96,28 @@ export const VisitUs: React.FC = () => {
             </div>
 
             {/* Hours Section */}
-            <div className="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm">
+            <div className="bg-white rounded-2xl border-2 border-secondary/30 p-6 shadow-lg">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Clock size={20} className="text-primary" />
+                <div className="p-3 bg-secondary/20 rounded-xl border-2 border-secondary/30">
+                  <Clock size={24} className="text-accent" />
                 </div>
-                <h3 className="font-serif text-2xl text-primary italic">Hours of Operation</h3>
+                <h3 className="font-serif text-2xl text-primary font-bold">Opening Hours</h3>
               </div>
               
               <div className="space-y-4">
                 {hours.map((schedule, index) => (
-                  <div key={index} className="flex justify-between items-start py-2 border-b border-stone-100 last:border-b-0">
-                    <div className="font-medium text-stone-700">
+                  <div key={index} className="flex justify-between items-start py-3 border-b-2 border-secondary/20 last:border-b-0">
+                    <div className="font-bold text-primary">
                       {schedule.day}
                     </div>
-                    <div className="text-right text-sm text-stone-600 space-y-1">
+                    <div className="text-right text-sm text-primary space-y-1 font-semibold">
                       {schedule.dinner && (
                         <div>
-                          <span className="text-primary font-medium">Dinner: </span>
                           {schedule.dinner}
                         </div>
                       )}
                       {schedule.brunch && (
                         <div>
-                          <span className="text-primary font-medium">Brunch: </span>
                           {schedule.brunch}
                         </div>
                       )}
@@ -133,23 +129,23 @@ export const VisitUs: React.FC = () => {
 
             {/* Additional Info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white rounded-xl border border-stone-200 p-4">
+              <div className="bg-white rounded-xl border-2 border-secondary/30 p-5">
                 <div className="flex items-center gap-2 mb-2">
-                  <Car size={16} className="text-accent" />
-                  <h4 className="font-medium text-primary">Parking</h4>
+                  <Car size={20} className="text-accent" />
+                  <h4 className="font-bold text-primary">Parking</h4>
                 </div>
-                <p className="text-sm text-stone-600">
-                  Valet service available nightly. Public garage on 19th Street.
+                <p className="text-sm text-coffee-700 font-medium">
+                  Free parking available. Street parking nearby.
                 </p>
               </div>
               
-              <div className="bg-white rounded-xl border border-stone-200 p-4">
+              <div className="bg-white rounded-xl border-2 border-secondary/30 p-5">
                 <div className="flex items-center gap-2 mb-2">
-                  <Award size={16} className="text-accent" />
-                  <h4 className="font-medium text-primary">Dress Code</h4>
+                  <Coffee size={20} className="text-accent" />
+                  <h4 className="font-bold text-primary">Wifi Available</h4>
                 </div>
-                <p className="text-sm text-stone-600">
-                  Smart casual to formal attire preferred.
+                <p className="text-sm text-coffee-700 font-medium">
+                  Free high-speed WiFi for all customers.
                 </p>
               </div>
             </div>
@@ -177,11 +173,11 @@ export const VisitUs: React.FC = () => {
                 <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-serif text-lg text-primary italic mb-1">
-                        Lumière Restaurant
+                      <h4 className="font-serif text-lg text-primary font-bold mb-1">
+                        Suvan's Cafe
                       </h4>
-                      <p className="text-sm text-stone-600">
-                        142 Fifth Avenue, New York, NY 10011
+                      <p className="text-sm text-coffee-700 font-semibold">
+                        123 Main Street, Your City, State 12345
                       </p>
                     </div>
                     <a 
@@ -199,23 +195,23 @@ export const VisitUs: React.FC = () => {
             
             {/* Transportation Info */}
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white rounded-xl border border-stone-200 p-4">
+              <div className="bg-white rounded-xl border border-secondary/30 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Globe size={16} className="text-accent" />
-                  <h4 className="font-medium text-primary">Subway</h4>
+                  <h4 className="font-medium text-primary">Parking</h4>
                 </div>
-                <p className="text-sm text-stone-600">
-                  L, N, Q, R, W, 4, 5, 6 trains to 14th St-Union Sq
+                <p className="text-sm text-coffee-700 font-semibold">
+                  Free street parking available nearby
                 </p>
               </div>
               
-              <div className="bg-white rounded-xl border border-stone-200 p-4">
+              <div className="bg-white rounded-xl border border-secondary/30 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Car size={16} className="text-accent" />
                   <h4 className="font-medium text-primary">Rideshare</h4>
                 </div>
-                <p className="text-sm text-stone-600">
-                  Uber & Lyft pickup available on 5th Avenue
+                <p className="text-sm text-coffee-700 font-semibold">
+                  Uber & Lyft pickup available at front entrance
                 </p>
               </div>
             </div>

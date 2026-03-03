@@ -101,8 +101,9 @@ export const Navbar: React.FC = () => {
             <div className="hidden md:block">
               <Button 
                 size="sm"
+                variant="secondary"
                 onClick={(e) => scrollToSection(e, 'reservations')}
-                className="bg-gradient-to-r from-secondary to-accent text-primary font-bold hover:scale-105 transition-all duration-300 border-0"
+                className="!bg-gradient-to-r !from-secondary !to-accent !text-primary !font-black hover:!scale-105 transition-all duration-300 !border-2 !border-accent shadow-lg shadow-secondary/30 relative z-50"
               >
                 Order Now
               </Button>

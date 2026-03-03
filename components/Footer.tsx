@@ -117,8 +117,8 @@ export const Footer: React.FC = () => {
               </div>
 
               {/* Links Sections */}
-              <div className="lg:col-span-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="lg:col-span-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                   {footerSections.map((section, index) => (
                     <div key={section.title}>
                       <h4 className="text-sm font-bold tracking-widest uppercase mb-6 text-secondary">
@@ -141,56 +141,6 @@ export const Footer: React.FC = () => {
                       </ul>
                     </div>
                   ))}
-                </div>
-              </div>
-
-              {/* Enhanced Newsletter */}
-              <div className="lg:col-span-2">
-                <div className="bg-secondary/10 backdrop-blur-sm rounded-2xl p-6 border-2 border-secondary/30 hover:border-secondary/50 transition-all duration-300">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Coffee size={22} className="text-secondary" />
-                    <h4 className="text-sm font-bold tracking-widest uppercase text-secondary">
-                      Newsletter
-                    </h4>
-                  </div>
-                  
-                  <p className="text-cream/80 text-sm mb-6 leading-relaxed font-medium">
-                    Get exclusive offers, new menu items, and sweet updates delivered to your inbox!
-                  </p>
-                  
-                  {!isSubscribed ? (
-                    <form onSubmit={handleSubscribe} className="space-y-4">
-                      <div className="relative">
-                        <input 
-                          type="email" 
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="Your email address" 
-                          required
-                          className="w-full bg-primary/50 border-2 border-secondary/30 text-cream px-4 py-3 rounded-xl focus:outline-none focus:border-secondary focus:bg-primary/70 text-sm placeholder-cream/50 transition-all duration-300 font-medium"
-                        />
-                      </div>
-                      <button 
-                        type="submit"
-                        disabled={isSubscribing}
-                        className="w-full bg-gradient-to-r from-secondary to-accent hover:from-accent hover:to-secondary text-primary px-4 py-3 text-sm font-bold tracking-wide uppercase rounded-xl transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg hover:scale-105 disabled:opacity-50"
-                      >
-                        {isSubscribing ? (
-                          <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
-                        ) : (
-                          <>
-                            <Heart size={18} />
-                            Subscribe
-                          </>
-                        )}
-                      </button>
-                    </form>
-                  ) : (
-                    <div className="text-center py-4">
-                      <Sparkles size={28} className="text-secondary mx-auto mb-2 animate-pulse" />
-                      <p className="text-secondary font-bold">Welcome to Suvan's family!</p>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
