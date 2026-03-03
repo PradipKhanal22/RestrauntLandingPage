@@ -14,7 +14,7 @@ import { Footer } from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-800 font-sans">
+    <div className="min-h-screen bg-cream text-primary font-sans">
       <QuickInfo />
       <Navbar />
       <main>

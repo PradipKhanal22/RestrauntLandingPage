@@ -1,52 +1,52 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
 import { MenuItem } from '../types';
-import { Star, Clock, Leaf } from 'lucide-react';
+import { Star, Clock, Coffee, Cake } from 'lucide-react';
 
 const signatureDishes: MenuItem[] = [
   {
     id: '1',
-    name: 'Seared Scallops',
-    description: 'Cauliflower purée, brown butter emulsion, toasted hazelnuts.',
-    price: '$28',
-    image: 'https://imgs.search.brave.com/TsW1i1OL2ayHlvfGcTItfIbUdW6TPX4VlAijnVoPxOc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTgy/MzA0MzQ1Ny9waG90/by9zcGljeS10aGFp/LWNoaWxpLXNjYWxs/b3BzLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1TTS1UZjZR/aHlJMXc3bGZoXzFi/QXIzMlp2ZDhHQjlG/TGtPdWd2N3VjNWV3/PQ',
-    category: 'Appetizer',
-    preparationTime: '15 min',
+    name: 'Caramel Latte',
+    description: 'Rich espresso with velvety caramel and steamed milk, topped with whipped cream.',
+    price: '$5.99',
+    image: 'https://images.unsplash.com/photo-1599750750742-a1ad2a7a534a?q=80&w=1287&auto=format&fit=crop',
+    category: 'Coffee',
+    preparationTime: '5 min',
     isSignature: true,
-    dietary: ['Gluten-Free']
+    dietary: ['Hot']
   },
   {
     id: '2',
-    name: 'Wagyu Beef Tartare',
-    description: 'Smoked egg yolk, pickled mustard seeds, sourdough crisp.',
-    price: '$34',
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1284&q=80',
-    category: 'Appetizer',
-    preparationTime: '10 min',
+    name: 'Mango Smoothie',
+    description: 'Fresh mango blended with yogurt, honey, and a splash of orange juice.',
+    price: '$6.49',
+    image: 'https://images.unsplash.com/photo-1505252585461-04db1eb84625?q=80&w=1152&auto=format&fit=crop',
+    category: 'Drinks',
+    preparationTime: '4 min',
     isSignature: true,
-    dietary: []
+    dietary: ['Cold', 'Fresh']
   },
   {
     id: '3',
-    name: 'Herb-Crusted Lamb',
-    description: 'Seasonal root vegetables, rosemary jus, mint gel.',
-    price: '$52',
-    image: 'https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1284&q=80',
-    category: 'Main Course',
-    preparationTime: '25 min',
+    name: 'Chocolate Chip Cookies',
+    description: 'Freshly baked, warm cookies loaded with premium chocolate chips.',
+    price: '$3.99',
+    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1364&auto=format&fit=crop',
+    category: 'Snacks',
+    preparationTime: '2 min',
     isSignature: true,
-    dietary: ['Organic']
+    dietary: ['Fresh Baked']
   },
   {
     id: '4',
-    name: 'Dark Chocolate Ganache',
-    description: 'Sea salt, olive oil, espresso crumble.',
-    price: '$18',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1284&q=80',
-    category: 'Dessert',
-    preparationTime: '12 min',
+    name: 'Custom Birthday Cake',
+    description: 'Personalized cakes made to order. Choose your flavors, design & message.',
+    price: 'From $45',
+    image: 'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?q=80&w=1287&auto=format&fit=crop',
+    category: 'Custom Cakes',
+    preparationTime: '24-48 hrs',
     isSignature: true,
-    dietary: ['Vegan', 'Gluten-Free']
+    dietary: ['Pre-Order']
   },
 ];
 
@@ -54,29 +54,29 @@ export const MenuTeaser: React.FC = () => {
   const [hoveredDish, setHoveredDish] = useState<string | null>(null);
 
   return (
-    <section id="menu" className="py-32 bg-gradient-to-b from-white to-stone-50 text-stone-900 scroll-mt-28 relative overflow-hidden">
+    <section id="menu" className="py-32 bg-gradient-to-b from-cream via-coffee-50 to-cream text-primary scroll-mt-28 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Enhanced Header */}
         <div className="text-center mb-20">
           <div className="flex items-center justify-center mb-6">
-            <div className="h-px w-12 bg-accent mr-4"></div>
-            <span className="text-accent text-sm uppercase tracking-widest font-medium flex items-center gap-2">
-              <Star size={16} className="text-accent" />
-              The Menu
+            <div className="h-px w-12 bg-secondary mr-4"></div>
+            <span className="text-accent text-sm uppercase tracking-widest font-bold flex items-center gap-2">
+              <Coffee size={18} className="text-secondary" />
+              Our Menu
             </span>
-            <div className="h-px w-12 bg-accent ml-4"></div>
+            <div className="h-px w-12 bg-secondary ml-4"></div>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary mb-6 italic">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary mb-6 font-bold">
             Signature Selections
           </h2>
-          <p className="text-stone-600 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-            Each dish is a carefully crafted journey of flavors, showcasing the finest seasonal ingredients
+          <p className="text-coffee-700 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+            From artisan coffees to custom cakes, each item is crafted with love and the finest ingredients
           </p>
-          <div className="h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto"></div>
+          <div className="h-px w-32 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto"></div>
         </div>
 
         {/* Enhanced Menu Grid */}
@@ -98,11 +98,11 @@ export const MenuTeaser: React.FC = () => {
                 />
                 
                 {/* Image Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="bg-white/90 backdrop-blur-sm text-primary px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                  <span className="bg-secondary/95 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">
                     {dish.category}
                   </span>
                 </div>
@@ -111,22 +111,22 @@ export const MenuTeaser: React.FC = () => {
                 {dish.isSignature && (
                   <div className="absolute top-4 right-4 z-10">
                     <div className="bg-accent text-white p-2 rounded-full shadow-lg">
-                      <Star size={14} fill="currentColor" />
+                      <Star size={16} fill="currentColor" />
                     </div>
                   </div>
                 )}
                 
                 {/* Hover Details */}
                 <div className={`absolute bottom-4 left-4 right-4 z-10 transition-all duration-500 ${hoveredDish === dish.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                  <div className="bg-white/95 backdrop-blur-sm rounded-lg p-3">
-                    <div className="flex items-center justify-between text-xs text-stone-600">
-                      <div className="flex items-center gap-1">
-                        <Clock size={12} />
+                  <div className="bg-cream/98 backdrop-blur-sm rounded-xl p-4 border border-secondary/30">
+                    <div className="flex items-center justify-between text-xs text-primary font-semibold">
+                      <div className="flex items-center gap-2">
+                        <Clock size={14} className="text-accent" />
                         <span>{dish.preparationTime}</span>
                       </div>
                       {dish.dietary.length > 0 && (
-                        <div className="flex items-center gap-1">
-                          <Leaf size={12} className="text-green-600" />
+                        <div className="flex items-center gap-2">
+                          <Coffee size={14} className="text-secondary" />
                           <span>{dish.dietary[0]}</span>
                         </div>
                       )}
@@ -137,26 +137,26 @@ export const MenuTeaser: React.FC = () => {
               
               {/* Content */}
               <div className="text-center px-2">
-                <h3 className="font-serif text-2xl mb-3 text-primary group-hover:text-accent transition-colors duration-300 leading-tight">
+                <h3 className="font-serif text-2xl mb-3 text-primary group-hover:text-accent transition-colors duration-300 leading-tight font-bold">
                   {dish.name}
                 </h3>
-                <p className="text-stone-500 text-sm mb-4 leading-relaxed min-h-[3rem]">
+                <p className="text-coffee-700 text-sm mb-4 leading-relaxed min-h-[3rem]">
                   {dish.description}
                 </p>
                 
                 {/* Price with Enhanced Styling */}
                 <div className="relative">
-                  <span className="font-bold text-lg text-primary group-hover:text-accent transition-colors duration-300">
+                  <span className="font-bold text-xl text-accent group-hover:text-secondary transition-colors duration-300">
                     {dish.price}
                   </span>
-                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 group-hover:w-8 h-px bg-accent transition-all duration-300"></div>
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 group-hover:w-12 h-0.5 bg-secondary transition-all duration-300"></div>
                 </div>
                 
                 {/* Dietary Info */}
                 {dish.dietary.length > 0 && (
-                  <div className="flex justify-center gap-1 mt-3">
+                  <div className="flex justify-center gap-2 mt-3">
                     {dish.dietary.map((diet, i) => (
-                      <span key={i} className="text-xs text-stone-400 bg-stone-100 px-2 py-1 rounded-full">
+                      <span key={i} className="text-xs text-primary bg-secondary/20 px-3 py-1 rounded-full font-medium">
                         {diet}
                       </span>
                     ))}
@@ -170,33 +170,34 @@ export const MenuTeaser: React.FC = () => {
         {/* Enhanced CTA Section */}
         <div className="text-center">
           <div className="max-w-md mx-auto mb-8">
-            <p className="text-stone-600 mb-6 italic">
-              "Every dish tells a story of our commitment to excellence and seasonal authenticity."
+            <p className="text-coffee-700 mb-6 italic text-lg font-medium">
+              "Every cup, every bite, crafted with passion and the finest ingredients"
             </p>
             <div className="flex justify-center mb-6">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} size={16} className="text-accent fill-current" />
+                <Star key={star} size={20} className="text-secondary fill-current" />
               ))}
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button
-              variant="solid"
               size="lg"
               aria-label="Explore the full menu"
-              className="bg-gradient-to-r from-accent to-primary text-white shadow-lg hover:brightness-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/30 min-w-[220px] px-6 py-3 rounded-xl transition-all"
+              className="bg-gradient-to-r from-secondary to-accent text-primary shadow-xl hover:scale-105 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-secondary/30 min-w-[240px] px-8 py-4 rounded-full transition-all font-bold text-lg"
             >
-              Explore Full Menu
+              <Coffee size={20} className="inline mr-2" />
+              View Full Menu
             </Button>
 
             <Button
-              variant="ghost"
+              variant="outline"
               size="lg"
-              aria-label="View wine pairings"
-              className="text-stone-700 hover:text-primary hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/10 min-w-[200px] px-6 py-3 rounded-xl transition-all"
+              aria-label="Order custom cake"
+              className="text-primary border-2 border-accent hover:bg-accent hover:text-cream focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/30 min-w-[240px] px-8 py-4 rounded-full transition-all font-bold text-lg"
             >
-              Wine Pairings
+              <Cake size={20} className="inline mr-2" />
+              Order Custom Cake
             </Button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Instagram, Facebook, Twitter, Mail, Award, Heart, Utensils, Sparkles, ChevronRight } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Mail, Coffee, Heart, Cake, Sparkles, ChevronRight } from 'lucide-react';
 
 const socialLinks = [
   { icon: Instagram, href: '#', label: 'Instagram', color: 'hover:text-pink-400' },
@@ -9,33 +9,33 @@ const socialLinks = [
 
 const footerSections = [
   {
-    title: 'Experience',
+    title: 'Menu',
     links: [
-      { name: 'Seasonal Menus', href: '#menu' },
-      { name: 'Wine Selection', href: '#' },
-      { name: 'Chef\'s Table', href: '#' },
-      { name: 'Tasting Menu', href: '#' },
-      { name: 'Private Events', href: '#events' }
+      { name: 'Coffee & Drinks', href: '#menu' },
+      { name: 'Fresh Snacks', href: '#' },
+      { name: 'Custom Cakes', href: '#' },
+      { name: 'Daily Specials', href: '#' },
+      { name: 'Catering', href: '#events' }
     ]
   },
   {
     title: 'Services',
     links: [
-      { name: 'Reservations', href: '#reservations' },
-      { name: 'Gift Certificates', href: '#' },
-      { name: 'Corporate Events', href: '#' },
-      { name: 'Catering', href: '#' },
-      { name: 'Cooking Classes', href: '#' }
+      { name: 'Order Online', href: '#reservations' },
+      { name: 'Gift Cards', href: '#' },
+      { name: 'Custom Cake Orders', href: '#' },
+      { name: 'Party Catering', href: '#' },
+      { name: 'Delivery', href: '#' }
     ]
   },
   {
     title: 'Connect',
     links: [
-      { name: 'About Our Story', href: '#about' },
-      { name: 'Meet the Team', href: '#' },
-      { name: 'Press & Awards', href: '#' },
-      { name: 'Careers', href: '#' },
-      { name: 'Contact Us', href: '#visit' }
+      { name: 'About Us', href: '#about' },
+      { name: 'Our Story', href: '#' },
+      { name: 'Join Our Team', href: '#' },
+      { name: 'Reviews', href: '#' },
+      { name: 'Visit Us', href: '#visit' }
     ]
   }
 ];
@@ -58,15 +58,15 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-primary via-primary to-stone-900 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-primary via-coffee-900 to-primary text-cream relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_1px_1px,#d6cec2_1px,transparent_0)] bg-[length:48px_48px]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_1px_1px,#F4D03F_1px,transparent_0)] bg-[length:48px_48px]"></div>
       </div>
       
       {/* Floating Elements */}
-      <div className="absolute top-1/4 right-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-1/4 left-10 w-24 h-24 bg-secondary/5 rounded-full blur-3xl animate-float-delayed"></div>
+      <div className="absolute top-1/4 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-1/4 left-10 w-24 h-24 bg-accent/10 rounded-full blur-3xl animate-float-delayed"></div>
       
       <div className="relative z-10">
         {/* Main Footer Content */}
@@ -77,25 +77,25 @@ export const Footer: React.FC = () => {
               {/* Brand Section */}
               <div className="lg:col-span-4">
                 <div className="mb-8">
-                  <h2 className="font-serif text-5xl italic mb-4 bg-gradient-to-r from-white to-secondary bg-clip-text text-transparent">
-                    Lumière
+                  <h2 className="font-serif text-5xl font-bold mb-4 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+                    Suvan's Cafe
                   </h2>
-                  <p className="text-stone-300 text-lg leading-relaxed mb-6">
-                    Where culinary artistry meets timeless elegance. Creating unforgettable dining experiences in the heart of New York.
+                  <p className="text-cream/80 text-lg leading-relaxed mb-6 font-medium">
+                    Your neighborhood cafe where every cup tells a story and every moment is special. Serving the community with passion since 2024.
                   </p>
                   
                   {/* Awards */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1">
-                      <Award size={16} className="text-accent" />
-                      <span className="text-sm font-medium">Michelin Star 2025</span>
+                  <div className="flex items-center gap-4 mb-6 flex-wrap">
+                    <div className="flex items-center gap-2 bg-secondary/20 backdrop-blur-sm rounded-full px-4 py-2 border border-secondary/30">
+                      <Coffee size={18} className="text-secondary" />
+                      <span className="text-sm font-bold text-secondary">Best Local Cafe 2024</span>
                     </div>
                   </div>
                 </div>
                 
                 {/* Enhanced Social Links */}
                 <div>
-                  <h4 className="text-sm uppercase tracking-widest mb-4 text-stone-400 font-bold">
+                  <h4 className="text-sm uppercase tracking-widest mb-4 text-secondary font-bold">
                     Follow Our Journey
                   </h4>
                   <div className="flex space-x-4">
@@ -105,10 +105,10 @@ export const Footer: React.FC = () => {
                         <a 
                           key={social.label}
                           href={social.href} 
-                          className={`group p-3 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 hover:border-accent/50 transition-all duration-300 hover:scale-110 ${social.color}`}
+                          className={`group p-3 bg-secondary/20 hover:bg-secondary/30 rounded-full border-2 border-secondary/30 hover:border-secondary transition-all duration-300 hover:scale-110 ${social.color}`}
                           aria-label={social.label}
                         >
-                          <Icon size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                          <Icon size={22} className="text-secondary group-hover:scale-110 transition-transform duration-300" />
                         </a>
                       );
                     })}
@@ -121,7 +121,7 @@ export const Footer: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {footerSections.map((section, index) => (
                     <div key={section.title}>
-                      <h4 className="text-sm font-bold tracking-widest uppercase mb-6 text-stone-400">
+                      <h4 className="text-sm font-bold tracking-widest uppercase mb-6 text-secondary">
                         {section.title}
                       </h4>
                       <ul className="space-y-3">
@@ -129,12 +129,12 @@ export const Footer: React.FC = () => {
                           <li key={link.name}>
                             <a 
                               href={link.href} 
-                              className="group flex items-center text-stone-300 hover:text-white transition-colors duration-300 text-sm"
+                              className="group flex items-center text-cream/80 hover:text-secondary transition-colors duration-300 text-sm font-medium"
                             >
                               <span className="group-hover:translate-x-1 transition-transform duration-300">
                                 {link.name}
                               </span>
-                              <ChevronRight size={14} className="ml-1 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                              <ChevronRight size={14} className="ml-1 opacity-0 group-hover:opacity-100 transition-all duration-300 text-accent" />
                             </a>
                           </li>
                         ))}
@@ -146,16 +146,16 @@ export const Footer: React.FC = () => {
 
               {/* Enhanced Newsletter */}
               <div className="lg:col-span-2">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                <div className="bg-secondary/10 backdrop-blur-sm rounded-2xl p-6 border-2 border-secondary/30 hover:border-secondary/50 transition-all duration-300">
                   <div className="flex items-center gap-2 mb-4">
-                    <Mail size={20} className="text-accent" />
-                    <h4 className="text-sm font-bold tracking-widest uppercase text-stone-400">
+                    <Coffee size={22} className="text-secondary" />
+                    <h4 className="text-sm font-bold tracking-widest uppercase text-secondary">
                       Newsletter
                     </h4>
                   </div>
                   
-                  <p className="text-stone-300 text-sm mb-6 leading-relaxed">
-                    Be the first to know about seasonal menus, exclusive events, and culinary experiences.
+                  <p className="text-cream/80 text-sm mb-6 leading-relaxed font-medium">
+                    Get exclusive offers, new menu items, and sweet updates delivered to your inbox!
                   </p>
                   
                   {!isSubscribed ? (
@@ -167,19 +167,19 @@ export const Footer: React.FC = () => {
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="Your email address" 
                           required
-                          className="w-full bg-white/10 border border-white/20 text-white px-4 py-3 rounded-xl focus:outline-none focus:border-accent focus:bg-white/20 text-sm placeholder-stone-400 transition-all duration-300"
+                          className="w-full bg-primary/50 border-2 border-secondary/30 text-cream px-4 py-3 rounded-xl focus:outline-none focus:border-secondary focus:bg-primary/70 text-sm placeholder-cream/50 transition-all duration-300 font-medium"
                         />
                       </div>
                       <button 
                         type="submit"
                         disabled={isSubscribing}
-                        className="w-full bg-accent hover:bg-accent/80 text-white px-4 py-3 text-sm font-bold tracking-wide uppercase rounded-xl transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg disabled:opacity-50"
+                        className="w-full bg-gradient-to-r from-secondary to-accent hover:from-accent hover:to-secondary text-primary px-4 py-3 text-sm font-bold tracking-wide uppercase rounded-xl transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg hover:scale-105 disabled:opacity-50"
                       >
                         {isSubscribing ? (
-                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
                         ) : (
                           <>
-                            <Heart size={16} />
+                            <Heart size={18} />
                             Subscribe
                           </>
                         )}
@@ -187,8 +187,8 @@ export const Footer: React.FC = () => {
                     </form>
                   ) : (
                     <div className="text-center py-4">
-                      <Sparkles size={24} className="text-accent mx-auto mb-2" />
-                      <p className="text-accent font-medium">Welcome to our culinary family!</p>
+                      <Sparkles size={28} className="text-secondary mx-auto mb-2 animate-pulse" />
+                      <p className="text-secondary font-bold">Welcome to Suvan's family!</p>
                     </div>
                   )}
                 </div>
@@ -198,24 +198,24 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Enhanced Bottom Bar */}
-        <div className="border-t border-white/10 bg-black/20 backdrop-blur-sm">
+        <div className="border-t border-secondary/20 bg-primary/30 backdrop-blur-sm">
           <div className="container mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex flex-col md:flex-row items-center gap-4 text-xs text-stone-400">
-                <p>&copy; 2025 Lumière Restaurant Group. All rights reserved.</p>
-                <div className="hidden md:block w-px h-4 bg-stone-600"></div>
+              <div className="flex flex-col md:flex-row items-center gap-4 text-xs text-cream/70 font-medium">
+                <p>&copy; 2024 Suvan's Cafe. All rights reserved.</p>
+                <div className="hidden md:block w-px h-4 bg-secondary/30"></div>
                 <div className="flex items-center gap-4">
-                  <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                  <a href="#" className="hover:text-secondary transition-colors">Privacy Policy</a>
                   <span>•</span>
-                  <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                  <a href="#" className="hover:text-secondary transition-colors">Terms of Service</a>
                   <span>•</span>
-                  <a href="#" className="hover:text-white transition-colors">Accessibility</a>
+                  <a href="#" className="hover:text-secondary transition-colors">Accessibility</a>
                 </div>
               </div>
               
-              <div className="flex items-center gap-2 text-xs text-stone-400">
-                <Utensils size={14} className="text-accent" />
-                <span>Crafted with passion in New York</span>
+              <div className="flex items-center gap-2 text-xs text-cream/70 font-medium">
+                <Coffee size={16} className="text-secondary" />
+                <span>Brewed with love ❤️</span>
               </div>
             </div>
           </div>

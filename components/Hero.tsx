@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Award, Sparkles } from 'lucide-react';
+import { ChevronDown, Coffee, Sparkles, Cake } from 'lucide-react';
 import { Button } from './Button';
 
 export const Hero: React.FC = () => {
@@ -22,19 +22,21 @@ export const Hero: React.FC = () => {
       {/* Background Image with Enhanced Overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          alt="Atmosphere"
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop"
+          alt="Cozy Cafe Atmosphere"
           className="w-full h-full object-cover scale-110 animate-slow-zoom"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-stone-900/60 to-stone-900/90"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-coffee-800/70 to-coffee-900/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
       </div>
 
-      {/* Floating Elements */}
+      {/* Floating Coffee Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent/30 rounded-full animate-float"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/40 rounded-full animate-float-delayed"></div>
-        <div className="absolute bottom-1/3 left-1/5 w-3 h-3 bg-secondary/20 rounded-full animate-float"></div>
+        <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-secondary/40 rounded-full animate-float"></div>
+        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-accent/50 rounded-full animate-float-delayed"></div>
+        <div className="absolute bottom-1/3 left-1/5 w-4 h-4 bg-secondary/30 rounded-full animate-float"></div>
+        <Coffee className="absolute top-1/2 right-1/4 w-6 h-6 text-secondary/20 animate-float-delayed" />
+        <Cake className="absolute bottom-1/4 right-1/3 w-5 h-5 text-accent/20 animate-float" />
       </div>
 
       {/* Main Content */}
@@ -43,74 +45,81 @@ export const Hero: React.FC = () => {
           {/* Enhanced Award Badge */}
           <div className="flex justify-center mb-8">
             <div className="group relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-accent/50 to-secondary/50 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-              <span className="relative bg-white/10 backdrop-blur-lg border border-white/30 text-white px-6 py-2 rounded-full text-sm uppercase tracking-widest flex items-center gap-3 hover:bg-white/20 transition-all duration-300">
-                <Award size={16} className="text-accent" />
-                Best New Restaurant 2025
-                <Sparkles size={14} className="text-secondary animate-pulse" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-secondary/60 to-accent/60 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+              <span className="relative bg-secondary/20 backdrop-blur-lg border border-secondary/40 text-white px-6 py-3 rounded-full text-sm uppercase tracking-widest flex items-center gap-3 hover:bg-secondary/30 transition-all duration-300">
+                <Coffee size={18} className="text-secondary" />
+                Freshly Brewed Since 2024
+                <Sparkles size={16} className="text-accent animate-pulse" />
               </span>
             </div>
           </div>
 
           {/* Enhanced Logo with Gradient Text */}
           <div className="relative">
-            <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl bg-gradient-to-br from-white via-secondary to-white bg-clip-text text-transparent italic tracking-tighter leading-none mb-4 drop-shadow-2xl">
-              Lumière
+            <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl bg-gradient-to-br from-secondary via-accent to-cream bg-clip-text text-transparent tracking-tight leading-none mb-4 drop-shadow-2xl font-bold">
+              Suvan's Cafe
             </h1>
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent/20 rounded-full blur-sm animate-pulse"></div>
+            <div className="absolute -top-4 -right-4 w-10 h-10 bg-secondary/30 rounded-full blur-sm animate-pulse"></div>
           </div>
 
           {/* Enhanced Tagline */}
           <div className="relative">
-            <p className="text-lg md:text-xl text-stone-200 font-light tracking-wide max-w-3xl mx-auto mb-8 font-serif italic leading-relaxed">
-              "An intimate convergence of seasonal flavors, artistry, and timeless elegance."
+            <p className="text-xl md:text-2xl text-cream/90 font-light tracking-wide max-w-3xl mx-auto mb-8 leading-relaxed">
+              "Where every sip tells a story & every bite brings joy"
             </p>
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+            <p className="text-base md:text-lg text-secondary/80 font-medium max-w-2xl mx-auto">
+              ☕ Premium Coffee • 🍰 Custom Cakes • 🥤 Refreshing Drinks • 🍪 Delicious Snacks
+            </p>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
           </div>
 
           {/* Enhanced Button Group */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
             <Button
               onClick={() => scrollToSection('reservations')}
-              className="relative min-w-[220px] px-8 py-4 
-             text-white font-medium text-lg tracking-wide
-             bg-black rounded-full
-             border border-amber-800/40
+              className="relative min-w-[240px] px-10 py-5 
+             text-primary font-bold text-lg tracking-wide
+             bg-gradient-to-r from-secondary to-accent rounded-full
+             border-2 border-secondary/60
              overflow-hidden
              transition-all duration-400 ease-out
-             hover:bg-amber-600 hover:border-amber-600 hover:shadow-xl hover:shadow-amber-500/25
-             group"
+             hover:scale-105 hover:shadow-2xl hover:shadow-secondary/40
+             group transform hover:-translate-y-1"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
-                Reserve a Table
+                <Coffee size={20} />
+                Order Now
                 <span className="translate-x-0 group-hover:translate-x-1 transition-transform duration-300">
                   →
                 </span>
               </span>
 
-              {/* Subtle shine effect on hover */}
+              {/* Shine effect on hover */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full 
-                  bg-gradient-to-r from-transparent via-white/10 to-transparent 
+                  bg-gradient-to-r from-transparent via-white/30 to-transparent 
                   transition-transform duration-700 skew-x-12" />
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="min-w-[220px] group backdrop-blur-sm"
+              className="min-w-[240px] group backdrop-blur-sm border-2 border-secondary/60 text-cream hover:bg-secondary/20 hover:border-secondary hover:scale-105 transition-all duration-300 py-5 px-10 rounded-full font-semibold"
               onClick={() => scrollToSection('menu')}
             >
-              <span>View Menus</span>
+              <span className="flex items-center justify-center gap-2">
+                <Cake size={20} />
+                View Menu
+              </span>
             </Button>
           </div>
         </div>
 
         {/* Enhanced Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center group cursor-pointer" onClick={() => scrollToSection('concept')}>
-          <div className="text-white/60 text-xs uppercase tracking-widest mb-2 group-hover:text-white/80 transition-colors">
-            Discover
+          <div className="text-secondary/80 text-xs uppercase tracking-widest mb-2 group-hover:text-secondary transition-colors font-semibold">
+            Explore More
           </div>
           <div className="animate-bounce">
-            <ChevronDown size={28} className="text-white/50 group-hover:text-white/70 transition-colors" />
+            <ChevronDown size={32} className="text-secondary/70 group-hover:text-secondary transition-colors" />
           </div>
         </div>
       </div>
